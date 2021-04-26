@@ -1,12 +1,9 @@
-DATAFILES=batch_16_mnist_100000_f32.bindata batch_32_mnist_100000_f32.bindata batch_64_mnist_100000_f32.bindata batch_128_mnist_100000_f32.bindata
+DATAFILES=defi1certif-datasets-fire_small.tar
 
 all: $(DATAFILES)
 
-mnist_100000_f32.bindata:
-	wget http://napoleon.hiperfit.dk/~HnimNart/mnist_data/mnist_100000_f32.bindata
-
-batch_%_mnist_100000_f32.bindata: mnist_100000_f32.bindata
-	(echo $*; cat $<) > $@
+defi1certif-datasets-fire_small.tar:
+	wget https://github.com/belarbi2733/keras_yolov3/releases/download/1/defi1certif-datasets-fire_small.tar
 
 clean:
-	rm -f $(DATAFILES) mnist_100000_f32.bindata
+	rm -f $(DATAFILES) defi1certif-datasets-fire_small.tar
